@@ -6,3 +6,4 @@ from .rtm import RelationalTopicModel
 from .diln import DILN
 from .hmm_lda import HMM_LDA
 from .at_model import AuthorTopicModel
+from .formatted_logger import *

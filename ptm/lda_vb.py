@@ -1,10 +1,10 @@
 import time
 
 import numpy as np
-from six.moves import xrange
+import six
 from scipy.special import gammaln, psi
 
-from .formatted_logger import formatted_logger
+from ptm.formatted_logger import formatted_logger
 
 eps = 1e-3
 
@@ -134,5 +134,6 @@ class vbLDA:
         score = score + np.sum((self.beta - self._lambda) * self._Elogbeta)
         score = score + np.sum(gammaln(self._lambda) - gammaln(self.beta))
         score = score + np.sum(gammaln(self.beta * self.n_voca) - gammaln(np.sum(self._lambda, 1)))
-
+        
+        print(score)
         return score
